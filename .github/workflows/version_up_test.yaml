@@ -22,8 +22,5 @@ jobs:
       - name: version patch
         run: |
           cd ${{ github.repository }}
-          npm version patch --no-git-tag-version
-          git add .
-          git commit -m ${{ github.event.release.tag_name }}
-          git tag -f ${{ github.event.release.tag_name }} HEAD
-          git push origin main -f
+          npm version patch
+          git push origin main
