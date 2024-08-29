@@ -3,7 +3,7 @@ name: Version Patch and Deploy
 on:
   push:
     branches:
-      - "ci*"
+      - ci-trigger
 
 jobs:
   version-patch:
