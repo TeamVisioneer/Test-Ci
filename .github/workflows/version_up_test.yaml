@@ -5,7 +5,7 @@ name: Version Patch and Deploy
 on:
   push:
     branches:
-      - "ci-*"
+      - "ci*"
 
 jobs:
   version-patch:
