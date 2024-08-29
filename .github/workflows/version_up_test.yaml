@@ -23,4 +23,4 @@ jobs:
         run: |
           cd ${{ github.repository }}
           npm version patch
-          git push origin main
+          git push origin main --tags
