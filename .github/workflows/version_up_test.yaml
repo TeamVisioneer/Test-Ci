@@ -14,9 +14,9 @@ jobs:
 
       - name: Configure Git for CI
         run: |
-          git clone https://x-access-token:${{ secrets.PERSONAL_GITHUB_ADMIN_TOKEN }}@github.com/${{ github.repository }} 
           git config user.name "TeamVisioneer"
           git config user.email "team.visioneer15@gmail.com"
+          git clone https://x-access-token:${{ secrets.PERSONAL_GITHUB_ADMIN_TOKEN }}@github.com/${{ github.repository }}
 
       - name: version patch
         run: |
