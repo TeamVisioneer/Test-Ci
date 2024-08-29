@@ -1,0 +1,27 @@
+name: Version Patch and Deploy
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  version-patch:
+    if: github.event.action == 'published'
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure Git for CI
+        run: |
+          git config --global user.name "TeamVisioneer"
+          git config --global user.email "team.visioneer15@gmail.com"
+          git clone https://x-access-token:${{ secrets.PERSONAL_GITHUB_ADMIN_TOKEN }}@github.com/${{ github.repository }} ${{ github.repository }}
+
+      - name: version patch
+        run: |
+          cd ${{ github.repository }}
+          npm version patch
+          git tag -f ${{ github.event.release.tag_name }} HEAD
+          git push origin main -f
