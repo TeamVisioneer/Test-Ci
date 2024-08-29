@@ -20,5 +20,6 @@ jobs:
 
       - name: version patch
         run: |
+          cd ${{ github.repository }}
           npm version patch
           git push origin HEAD:main
