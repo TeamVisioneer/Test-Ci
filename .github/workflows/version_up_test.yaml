@@ -14,13 +14,11 @@ jobs:
 
       - name: Configure Git for CI
         run: |
+          git clone https://x-access-token:${{ secrets.PERSONAL_GITHUB_ADMIN_TOKEN }}@github.com/${{ github.repository }} 
           git config user.name "TeamVisioneer"
           git config user.email "team.visioneer15@gmail.com"
 
-      - name: Run npm version patch
-        run: npm version patch
-
-      - name: Push version bump to main branch
+      - name: version patch
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_GITHUB_ADMIN_TOKEN }}@github.com/${{ github.repository }}
+          npm version patch
           git push origin HEAD:main
