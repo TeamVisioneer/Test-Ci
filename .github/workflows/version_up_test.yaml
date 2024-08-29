@@ -1,12 +1,13 @@
 name: Version Patch and Deploy
 
 on:
-  push:
-    branches:
-      - ci-trigger
+  release:
+    types: [published]
 
 jobs:
   version-patch:
+    if: github.event.action == 'published'
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -22,4 +23,5 @@ jobs:
         run: |
           cd ${{ github.repository }}
           npm version patch
-          git push origin HEAD:main
+          git tag -f ${{ github.event.release.tag_name }} HEAD
+          git push origin main -f
