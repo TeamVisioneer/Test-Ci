@@ -10,10 +10,12 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        margin: 0;
+        padding: 10px;
         font-family: Arial, sans-serif;
         background-color: #f0f0f0;
-        flex-direction: column; /* Add this line to make the body column-oriented */
+        flex-direction: column;
+        max-width: 400px; /* Specifies the maximum width */
+        margin: auto;
       }
       .container {
         text-align: center;
@@ -39,6 +41,10 @@
         margin-top: 5px;
         font-size: 14px;
         color: #333;
+        overflow-wrap: break-word; /* Breaks long words when necessary */
+        word-wrap: break-word; /* Ensures long words wrap to the next line */
+        word-break: break-all; /* Breaks words if they reach the edge */
+        white-space: normal; /* Ensures text wraps naturally to the next line */
       }
       .button-component {
         margin-bottom: 20px; /* Add this line to provide spacing between button components */
@@ -56,7 +62,7 @@
           >안드로이드</a
         >
         <div class="link-text">
-          intent://inappbrowser?url=https://prayu.vercel.app#Intent;scheme=kakaotalk;package=com.kakao.talk;end;
+          intent://inappbrowser?url=https://prayu.vercel.app#Intent;scheme=kakaotalk;package=com.kakao.talk;S.browser_fallback_url=https://prayu.vercel.app;end;
         </div>
       </div>
       <!-- Add this line to show the link text below the button -->
