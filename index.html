@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>두 개의 버튼</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        flex-direction: column; /* Add this line to make the body column-oriented */
+      }
+      .container {
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Add this line to make the container column-oriented */
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        width: 200px;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      .link-text {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #333;
+      }
+      .button-component {
+        margin-bottom: 20px; /* Add this line to provide spacing between button components */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>딥링크 테스트</h1>
+    <!-- Add this line to include the title -->
+    <div class="container">
+      <div class="button-component">
+        <a
+          href="intent://inappbrowser?url=https://prayu.vercel.app#Intent;scheme=kakaotalk;package=com.kakao.talk;end;"
+          class="btn"
+          >안드로이드</a
+        >
+        <div class="link-text">
+          intent://inappbrowser?url=https://prayu.vercel.app#Intent;scheme=kakaotalk;package=com.kakao.talk;end;
+        </div>
+      </div>
+      <!-- Add this line to show the link text below the button -->
+      <div class="button-component">
+        <a
+          href="kakaotalk://inappbrowser?url=https://prayu.vercel.app"
+          class="btn"
+          >iOS</a
+        >
+        <div class="link-text">
+          kakaotalk://inappbrowser?url=https://prayu.vercel.app
+        </div>
+      </div>
+      <!-- Add this line to show the link text below the button -->
+    </div>
+  </body>
+</html>
